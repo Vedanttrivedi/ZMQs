@@ -24,7 +24,7 @@ public class Client
             {
                 String request = "Hello";
                 System.out.println("Sending Hello " + requestNbr);
-                socket.send(request.getBytes(ZMQ.CHARSET), 0);
+                socket.send(request.getBytes(ZMQ.CHARSET), 1);
 
                 byte[] reply = socket.recv(0);
                 System.out.println(

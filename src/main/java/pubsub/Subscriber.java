@@ -19,6 +19,7 @@ public class Subscriber
             while (true)
             {
                 System.out.println("Hello");
+
                 byte[] message = socket.recv(0);
 
                 System.out.println("Publisher : "+ new String(message,ZMQ.CHARSET));

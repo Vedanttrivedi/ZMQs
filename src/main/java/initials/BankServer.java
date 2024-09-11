@@ -3,7 +3,6 @@ package initials;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ;
-
 import java.util.concurrent.ConcurrentHashMap;
 
 public class BankServer
@@ -28,6 +27,7 @@ public class BankServer
             {
                 //check for client request and reply according to that whethere transaction is possible or not
                 var message = socket.recv();
+
                 System.out.println("Recevied Transaction "+new String(message,ZMQ.CHARSET));
 
                 socket.send("Okay");

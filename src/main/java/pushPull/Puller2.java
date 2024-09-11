@@ -13,13 +13,16 @@ public class Puller2
 
             ZMQ.Socket socket = context.createSocket(ZMQ.PULL);
 
-            socket.connect("tcp://localhost:5678");
+            socket.connect("tcp://localhost:6800");
+
+            socket.setHWM(100);
 
             while(true)
             {
                 System.out.println("About to receive message!");
 
                 var message = socket.recvStr();
+
 
                 System.out.println("Push Server : "+message);
             }

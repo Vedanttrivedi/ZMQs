@@ -14,11 +14,11 @@ public class Server
         System.out.println("Mainer");
         try(ZContext context = new ZContext())
         {
-            ZMQ.Socket socket = context.createSocket(SocketType.ROUTER);
+            ZMQ.Socket socket = context.createSocket(SocketType.REP);
 
             System.out.println("main program");
 
-            socket.bind("tcp://*:5000");
+            socket.bind("tcp://*:5678");
 
             System.out.println("Server is binded to port 5000");
 

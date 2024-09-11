@@ -13,7 +13,7 @@ public class Puller
 
             ZMQ.Socket socket = context.createSocket(ZMQ.PULL);
 
-            socket.connect("tcp://localhost:5678");
+            socket.connect("tcp://localhost:6800");
 
             while(true)
             {

@@ -22,18 +22,19 @@ public class Publisher
             socket1.subscribe("Update:".getBytes(ZMQ.CHARSET));
 
             boolean flag = true;
-
+            var counter=0;
             while(flag)
             {
                 System.out.println("In Loop");
 
-                socket.send("Update: This is broadcast message".getBytes(ZMQ.CHARSET),0);
+                socket.send("Update: This is broadcast message"+counter+" ".getBytes(ZMQ.CHARSET),0);
 
 //                byte[] recvMessge = socket1.recv();
 
                 try
                 {
                   Thread.sleep(1000);
+                    counter++;
                 }
                 catch (InterruptedException ie)
                 {

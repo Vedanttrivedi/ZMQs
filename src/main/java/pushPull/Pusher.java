@@ -12,7 +12,7 @@ public class Pusher
 
             ZMQ.Socket socket = context.createSocket(ZMQ.PUSH);
 
-            socket.bind("tcp://*:5678");
+            socket.bind("tcp://*:6800");
 
             int messageNumber = 0;
 
